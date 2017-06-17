@@ -1,0 +1,34 @@
+{
+  "name": "web-starter-scss",
+  "version": "0.0.1",
+  "description": "Base SCSS for my new web project.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/42EG4M1/web-starter-scss.git"
+  },
+  "author": "Tatsuya Azegami",
+  "license": "MIT",
+  "scripts": {
+    "build:sass": "node-sass styles/all.scss dist/styles/bundle.min.css",
+    "build:postcss": "postcss dist/styles/*.css --no-map --use autoprefixer -b \"last 2 versions\" --use csswring --output dist/styles/*.css",
+    "build:css": "npm run build:sass && npm run build:postcss",
+    "build:clean": "npm run clean && mkdirp dist/styles",
+    "build": "npm-run-all -s build:clean -p build:css",
+    "dev:sass": "node-sass styles/all.scss dist/styles/bundle.min.css --output-style expanded",
+    "dev:postcss": "postcss dist/styles/*.css --use autoprefixer -b \"last 2 versions\" --output dist/styles/*.css",
+    "dev:css": "npm run dev:sass && npm run dev:postcss",
+    "dev:mkdir": "mkdirp dist/styles",
+    "dev": "npm-run-all -s dev:mkdir -p dev:css",
+    "clean": "rimraf dist"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.7.7",
+    "csswring": "^5.1.1",
+    "mkdirp": "^0.5.1",
+    "node-sass": "^4.5.2",
+    "npm-run-all": "^4.0.2",
+    "postcss-cli": "^3.1.1",
+    "rimraf": "^2.6.1"
+  }
+}
