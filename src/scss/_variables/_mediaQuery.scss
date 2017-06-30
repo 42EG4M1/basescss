@@ -1,11 +1,9 @@
-/**
- * _mediaQuery
- */
+// ====================
+// * _mediaQuery
+// ====================
 
-/*
-  how to use: @media #{$mq600}
-  ChromeScrollBarWidth 15px - 1px = 14px
-*/
+// how to use: @media #{$mq600}
+// ChromeScrollBarWidth 15px - 1px = 14px
 
 //== max-width
 $mq400: "screen and (max-width: 400px)";

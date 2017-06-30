@@ -1,18 +1,17 @@
-/**
- * _color
- */
+// ====================
+// * _color
+// ====================
 
-/*
-  明度 ->
-  $var: lighten($color, n%);
-  $var: darken($color, n%);
-  彩度 ->
-  $var: saturate($color, n%);
-  $var: desaturate($color, n%);
-  透明度 ->
-  $var: transparentize($color, n);
-  $var: rgba($color, n);
-*/
+// 明度 ->
+// $var: lighten($color, n%);
+// $var: darken($color, n%);
+// 彩度 ->
+// $var: saturate($color, n%);
+// $var: desaturate($color, n%);
+// 透明度 ->
+// $var: transparentize($color, n);
+// $var: rgba($color, n);
+
 
 //== color scheme
 $_cs-main:    #242424;

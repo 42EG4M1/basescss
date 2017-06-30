@@ -20,7 +20,7 @@ Clone basescss.
     $ git clone git@github.com:42EG4M1/basescss.git [directory path]/src/scss
 
 
-Install npm package.
+Install npm packages.
 
     $ npm i -D node-sass node-sass-package-importer postcss-cli autoprefixer csswring
     $ npm i -S normalize.css
