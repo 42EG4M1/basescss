@@ -1,18 +1,41 @@
-# Web Starter SCSS
-Base SCSS for my new web project.
+# basescss
+basescss is base SCSS for my new web project.
 
 
-## clone
-    $ git clone git@github.com:42EG4M1/web-starter-scss.git
+## Required
+
+- node-sass
+- node-sass-package-importer
+- normalize.css
+- postcss-cli
+- autoprefixer
+- csswring
 
 
-## Development
-    # package
-    npm i           # install npm packages
+## Get Started
 
-    # build
-    npm run dev     # with SourceMap
-    npm run build   # compressed and minify
+
+Clone basescss.
+
+    $ git clone git@github.com:42EG4M1/basescss.git [directory path]/src/scss
+
+
+Install npm package.
+
+    $ npm i -D node-sass node-sass-package-importer postcss-cli autoprefixer csswring
+    $ npm i -S normalize.css
+
+
+Add the following to the package.json scripts.
+
+    "scripts": {
+      ･･･
+      "build:sass": "node-sass --importer node_modules/node-sass-package-importer/dist/cli.js src/scss/all.scss dist/css/bundle.min.css",
+      "build:postcss": "postcss dist/css/*.css --no-map --use autoprefixer -b \"last 2 versions\" --use csswring --output dist/css/*.css",
+      "dev:sass": "node-sass --importer node_modules/node-sass-package-importer/dist/cli.js src/scss/all.scss dist/css/bundle.min.css --output-style expanded",
+      "dev:postcss": "postcss dist/css/*.css --use autoprefixer -b \"last 2 versions\" --output dist/css/*.css",
+      ･･･
+    },
 
 
 ## commit message

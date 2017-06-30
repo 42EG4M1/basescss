@@ -1,7 +1,7 @@
 {
-  "name": "web-starter-scss",
+  "name": "base-scss",
   "version": "0.0.1",
-  "description": "Base SCSS for my new web project.",
+  "description": "basescss is base SCSS for my new web project.",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -10,16 +10,13 @@
   "author": "Tatsuya Azegami",
   "license": "MIT",
   "scripts": {
-    "build:sass": "node-sass styles/all.scss dist/styles/bundle.min.css",
-    "build:postcss": "postcss dist/styles/*.css --no-map --use autoprefixer -b \"last 2 versions\" --use csswring --output dist/styles/*.css",
-    "build:css": "npm run build:sass && npm run build:postcss",
-    "build:clean": "npm run clean && mkdirp dist/styles",
-    "build": "npm-run-all -s build:clean -p build:css",
-    "dev:sass": "node-sass styles/all.scss dist/styles/bundle.min.css --output-style expanded",
-    "dev:postcss": "postcss dist/styles/*.css --use autoprefixer -b \"last 2 versions\" --output dist/styles/*.css",
-    "dev:css": "npm run dev:sass && npm run dev:postcss",
-    "dev:mkdir": "mkdirp dist/styles",
-    "dev": "npm-run-all -s dev:mkdir -p dev:css",
+    "build": "npm-run-all clean mkdir build:sass build:postcss",
+    "build:sass": "node-sass --importer node_modules/node-sass-package-importer/dist/cli.js src/scss/all.scss dist/css/bundle.min.css",
+    "build:postcss": "postcss dist/css/*.css --no-map --use autoprefixer -b \"last 2 versions\" --use csswring --output dist/css/*.css",
+    "dev": "npm-run-all mkdir dev:sass dev:postcss",
+    "dev:sass": "node-sass --importer node_modules/node-sass-package-importer/dist/cli.js src/scss/all.scss dist/css/bundle.min.css --output-style expanded",
+    "dev:postcss": "postcss dist/css/*.css --use autoprefixer -b \"last 2 versions\" --output dist/css/*.css",
+    "mkdir": "mkdirp dist/css",
     "clean": "rimraf dist"
   },
   "devDependencies": {
@@ -27,8 +24,12 @@
     "csswring": "^5.1.1",
     "mkdirp": "^0.5.1",
     "node-sass": "^4.5.2",
+    "node-sass-package-importer": "^3.0.4",
     "npm-run-all": "^4.0.2",
     "postcss-cli": "^3.1.1",
     "rimraf": "^2.6.1"
+  },
+  "dependencies": {
+    "normalize.css": "^7.0.0"
   }
 }
