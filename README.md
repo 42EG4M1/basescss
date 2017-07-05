@@ -23,6 +23,10 @@ Clone basescss.
 Install npm packages.
 
     $ npm i -D node-sass node-sass-package-importer postcss-cli autoprefixer csswring
+
+
+Install normalize.css
+
     $ npm i -S normalize.css
 
 
@@ -38,7 +42,7 @@ Add the following to the package.json scripts.
     },
 
 
-## commit message
+## Commit message
     Fix    - Bug fixes.
     Add    - Add a new files and functions.
     Modify - Fixing features that are not bugs.
